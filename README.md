@@ -62,8 +62,8 @@ A simple ATM system built in Java that allows users to register, login, and perf
 ```
 ATM-System/
 ├── Account.java      # Account class with all banking operations
-|-- Account.class     # Compiled class for Account.java
-|-- Main.class        # Compiled class for Main.java
+├── Account.class     # Compiled class for Account.java
+├── Main.class        # Compiled class for Main.java
 ├── Main.java         # Main application with user interface
 └── accounts.json     # Data file storing all accounts (auto-generated)
 ```

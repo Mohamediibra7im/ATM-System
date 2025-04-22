@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.*;
 
@@ -27,8 +28,8 @@ public class Main {
                 accountNumber = input.nextLine();
                 if (!accountNumber.isEmpty() && accountNumber.matches("\\d+")) {
                     if (!accounts.containsKey(accountNumber)) {
-                        break; 
-                    }else {
+                        break;
+                    } else {
                         System.out.println("Account number already exists.");
                     }
                 } else {
@@ -49,11 +50,18 @@ public class Main {
             System.out.println("----------LOGIN----------");
             System.out.print("Enter your account number: ");
             String accNum = input.nextLine();
+            acc = accounts.get(accNum);
+
+            if (acc == null) {
+                System.out.println("Account not found. Please register first.");
+                return;
+            }
+
             System.out.print("Enter your PIN: ");
             String pin = input.nextLine();
-            acc = accounts.get(accNum);
-            if (acc == null || !acc.checkPin(pin)) {
-                System.out.println("Invalid credentials. Exiting.");
+
+            if (!acc.checkPin(pin)) {
+                System.out.println("Invalid PIN. Exiting.");
                 return;
             }
         }
